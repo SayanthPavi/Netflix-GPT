@@ -1,7 +1,10 @@
 # Netflix GPT
 
-- Create React App --> npx create-react-app
--Configured TailwindCSS ---> You can go to the TailwindCSS website and find out how to configure it.
+- Create React App 
+- Configured TailwindCSS
+- Header
+- Login Form
+- Sign up Form
 
 # Features
 - Login/Sign Up
@@ -17,4 +20,3 @@
 - Netflix GPT 
     - Search Bar
     - Movie Suggestions
-                
