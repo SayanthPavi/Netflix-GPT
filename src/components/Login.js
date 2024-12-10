@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
-import {USER_AVTAR} from '../utils/constants';
+import { BG_IMAGE_URL, USER_AVTAR } from "../utils/constants";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -10,7 +10,6 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-
 
 const Login = () => {
   const [isSignInFrom, setIsSignInForm] = useState(true);
@@ -40,7 +39,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:USER_AVTAR
+            photoURL: USER_AVTAR,
           })
             .then(() => {
               // Profile updated!
@@ -70,7 +69,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -87,10 +85,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/2bcf01ee-7ef6-4930-b0d5-c6863853c461/web/IN-en-20241125-TRIFECTA-perspective_a47db038-756f-4f26-b1f7-cfc882b98746_large.jpg"
-          alt="background img"
-        />
+        <img src={BG_IMAGE_URL} alt="background img" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
